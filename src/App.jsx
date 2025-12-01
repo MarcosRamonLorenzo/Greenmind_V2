@@ -1,11 +1,25 @@
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
+import LogIn from "../pages/LogIn.jsx"
+import SignUp from "../pages/SignUp.jsx"
+import { Route, Routes, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import UserProvider from "../contexts/UserProvider.jsx";
 
 function App() {
-  let isLogin = true;
+  let isLogin = false;
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!isLogin) {
+      navigate('/log_in');
+    }
+  
+  }, [])
+  
 
   return (
     <>
+      <UserProvider>
       <Routes>
         {isLogin ? (
           <>
@@ -13,11 +27,12 @@ function App() {
           </>
         ) : (
           <>
-            <Route path="/log_in" element={<div>LogIn</div>} />
-            <Route path="/sign_in" element={<div>SignUp</div>} />
+            <Route path="/log_in" element={<LogIn/>} />
+            <Route path="/sign_in" element={<SignUp/>} />
           </>
         )}
       </Routes>
+      </UserProvider>
     </>
   );
 }
