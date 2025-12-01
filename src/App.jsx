@@ -3,15 +3,15 @@ import LogIn from "../pages/LogIn.jsx"
 import SignUp from "../pages/SignUp.jsx"
 import { Route, Routes } from "react-router-dom";
 import UserProvider from "../contexts/UserProvider.jsx";
+import useUser from "../hooks/useUser.jsx";
 
 function App() {
-  let isLogin = false;
 
+  const { sesionIniciada , estadoUsuario } = useUser();
   return (
     <>
-      <UserProvider>
       <Routes>
-        {isLogin ? (
+        {sesionIniciada && estadoUsuario ? (
           <>
             <Route path="/" element={<div>Home</div>} />
           </>
@@ -22,7 +22,7 @@ function App() {
           </>
         )}
       </Routes>
-      </UserProvider>
+    
     </>
   );
 }
