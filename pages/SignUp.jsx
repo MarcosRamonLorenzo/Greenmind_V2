@@ -1,7 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import "./SignUp.css";
+import useUser from "../hooks/useUser";
 
 const SignUp = () => {
+
+  const { actualizarDatoRegistro , registrarUsuario } = useUser();
+
 
   const navigate = useNavigate();
 
@@ -21,12 +25,12 @@ const SignUp = () => {
         </div>
 
         <div className="form">
-          <input type="text" className="input" placeholder="Full name" />
-          <input type="email" className="input" placeholder="Email" />
-          <input type="password" className="input" placeholder="Password" />
-          <input type="password" className="input" placeholder="Repeat password" />
+          <input type="text" className="input" placeholder="Full name" name="name" onChange={(e)=>{actualizarDatoRegistro(e)}} />
+          <input type="email" className="input" placeholder="Email" name="email" onChange={(e)=>{actualizarDatoRegistro(e)}} />
+          <input type="password" className="input" placeholder="Password" name="password" onChange={(e)=>{actualizarDatoRegistro(e)}} />
+          <input type="password" className="input" placeholder="Repeat password"   />
 
-          <button className="form-btn">Sign up</button>
+          <button className="form-btn" onClick={()=>{registrarUsuario();}}>Sign up</button>
 
           <p className="sign-up-label">
             Already have an account?

@@ -14,14 +14,13 @@ const UserProvider = ({ children }) => {
   const [sesionIniciada, setSesionIniciada] = useState(valorInicialSesion);
   const [estadoUsuario, setEstadoUsuario] = useState(valorInicialUsuarioSesion);
 
-
   const estadoInicialFormularioLogIn = {
     email: "",
     password: "",
   };
 
-    const estadoInicialFormularioSignUp = {
-    name:"",
+  const estadoInicialFormularioSignUp = {
+    name: "",
     email: "",
     password: "",
   };
@@ -29,16 +28,18 @@ const UserProvider = ({ children }) => {
   const estadoInicialErrores = [];
   const valoresInicialesAlerta = { inicioSesion: false, registro: false };
 
+  const [estadoInicioSesion, setEstadoInicioSesion] = useState(
+    estadoInicialFormularioLogIn
+  );
+  const [erroresInicioSesion, setErroresInicioSesion] =
+    useState(estadoInicialErrores);
 
-  const [estadoInicioSesion, setEstadoInicioSesion] = useState(estadoInicialFormularioLogIn);
-  const [erroresInicioSesion, setErroresInicioSesion] = useState(estadoInicialErrores);
-
-  const [estadoRegistro, setEstadoRegistro] = useState(estadoInicialFormularioSignUp);
+  const [estadoRegistro, setEstadoRegistro] = useState(
+    estadoInicialFormularioSignUp
+  );
   const [erroresRegistro, setErroresRegistro] = useState(estadoInicialErrores);
 
-
   const [estadosAlertas, setEstadosAlertas] = useState(valoresInicialesAlerta);
-
 
   const actualizarDatoRegistro = (evento) => {
     const { name, value } = evento.target;
@@ -54,14 +55,20 @@ const UserProvider = ({ children }) => {
     if (comprobarFormularioRegister()) {
       try {
         const { data, error } = await supabaseConexion.auth.signUp({
+         
           email: estadoRegistro.email,
           password: estadoRegistro.password,
+          options: {
+            data: {
+               name: estadoRegistro.name,
+            },
+          },
         });
         if (error) throw error;
         mostrarAlertaRegistro();
         redireccionar("/");
         //Vaciar formulario.
-        setEstadoRegistro(estadoInicialFormulario);
+        setEstadoRegistro(estadoInicialFormularioSignUp);
       } catch (error) {
         setErroresRegistro([error.message]);
       }
@@ -69,6 +76,8 @@ const UserProvider = ({ children }) => {
   };
 
   const iniciarSesionUsuario = async () => {
+    console.log(estadoInicioSesion);
+
     if (comprobarFormularioInicioSesion()) {
       try {
         const { data, error } = await supabaseConexion.auth.signInWithPassword({
@@ -76,11 +85,13 @@ const UserProvider = ({ children }) => {
           password: estadoInicioSesion.password,
         });
 
+        console.log(error);
+
         if (error) throw error;
         redireccionar("/");
         mostrarAlertaInicioSesion();
         //Vaciar formulario.
-        setEstadoInicioSesion(estadoInicialFormulario);
+        setEstadoInicioSesion(estadoInicialFormularioLogIn);
       } catch (error) {
         //Si da este error avismos al usuario que la contraseña esta mal puesta o que no existe una cuneta con esos datos de sesión.
         if (error.message === "Invalid login credentials") {
@@ -210,5 +221,5 @@ const UserProvider = ({ children }) => {
   );
 };
 
-export { ContextOfUsuarios };
 export default UserProvider;
+export { ContextOfUsuarios };
