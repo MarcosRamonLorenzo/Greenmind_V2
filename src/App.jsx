@@ -1,3 +1,4 @@
+import  { Home }  from "../pages/Home";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 
@@ -9,7 +10,7 @@ function App() {
       <Routes>
         {isLogin ? (
           <>
-            <Route path="/" element={<div>Home</div>} />
+            <Route path="/" element={<Home />} />
           </>
         ) : (
           <>
