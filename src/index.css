@@ -11,6 +11,26 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --color-primary:       #8bc27a;  /* Verde principal */
+  --color-primary-dark:  #7ab26a;  /* Verde oscuro (para degradados) */
+  --color-secondary:     #ebc48a;  /* Naranja/Dorado secundario */
+
+  --color-bg-body:       #fafff9;  /* Fondo de la app (casi blanco) */
+  --color-white:         #ffffff;  /* Blanco puro */
+  --color-grey-inactive: #adacaa;  /* Gris para elementos no seleccionados */
+  --color-grey-bar:      #555555;  /* Gris oscuro para barra de progreso */
+
+  --color-text-main:     #1a1a1a;  /* Texto principal (casi negro) */
+  --color-text-muted:    #666666;  /* Texto secundario (gris) */
+
+  --shadow-soft:         0 10px 30px -10px rgba(139, 194, 122, 0.3);
+
+  --weight-regular:      400;
+  --weight-medium:       500;
+  --weight-semibold:     600;
+  --weight-bold:         700;
+  --weight-extrabold:    800;
 }
 
 a {
