@@ -58,9 +58,9 @@ export const Home = () => {
           <h2>Retos</h2>
         </div>
         <div className="filter-chips">
-          <button className="chip active">Movilidad</button>
-          <button className="chip">Plástico</button>
-          <button className="chip">Reciclaje</button>
+          <div className="chip active">Movilidad</div>
+          <div className="chip">Plástico</div>
+          <div className="chip">Reciclaje</div>
         </div>
       </section>
 
