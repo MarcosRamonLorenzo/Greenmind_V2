@@ -5,4 +5,5 @@ const supabaseConexion = createClient(
   import.meta.env.VITE_SUPEBASE_KEY
 ); 
 
+
 export { supabaseConexion };
