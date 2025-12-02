@@ -1,3 +1,4 @@
+import  { Home }  from "../pages/Home";
 import "./App.css";
 import LogIn from "../pages/LogIn.jsx"
 import SignUp from "../pages/SignUp.jsx"
@@ -13,7 +14,7 @@ function App() {
       <Routes>
         {sesionIniciada && estadoUsuario ? (
           <>
-            <Route path="/" element={<div>Home</div>} />
+            <Route path="/" element={<Home />} />
           </>
         ) : (
           <>
