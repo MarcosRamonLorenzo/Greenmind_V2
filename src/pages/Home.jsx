@@ -1,44 +1,42 @@
-import React from 'react';
 import "./Home.css"; // El CSS está en la misma carpeta, así que se queda igual
 
-// --- IMPORTANTE: RUTAS DE IMÁGENES ---
-// "../" nos lleva a la raíz del proyecto
-// Luego entramos en "src/assets/..."
+
 import streakImg from '../assets/racha.png';
 import bikeImg from '../assets/bici.jpg';
 import carpoolImg from '../assets/coche.jpg';
 import busImg from '../assets/bus.jpg';
+import profileImg from '../assets/squirtEl.jpg';
+import { BadgeJapaneseYen, Flame, House, Leaf, User } from 'lucide-react';
+import useUser from "../hooks/useUser";
+import { BottomNav } from "../components/BottomNav";
+
 
 export const Home = () => {
+
+   const { estadoUsuario } = useUser();
+
   return (
     <div className="home-container">
       {/* Header Section */}
       <header className="home-header">
         <div className="user-profile">
           <div className="avatar-placeholder">
-            <svg viewBox="0 0 24 24" fill="currentColor" className="user-icon">
-              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-            </svg>
+           <img src={profileImg} alt=""  />
           </div>
-          <div className="greeting">
-            <h1>Buenas,</h1>
-            <p>Usuario</p>
+           <div className="greeting">
+            <h1>Bienvenido</h1>
+            <p>{estadoUsuario?.user_metadata.name}</p>
           </div>
         </div>
 
-        <div className="stats-container">
+         <div className="stats-container">
           <div className="stat-chip">
             <span>5</span>
-            <img src={streakImg} alt="Racha" className="stat-icon-img" />
+            <Flame width={15} />
           </div>
           <div className="stat-chip">
             <span>500</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="icon-coin">
-              <circle cx="12" cy="12" r="10"></circle>
-              <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path>
-              <line x1="12" y1="18" x2="12" y2="22"></line>
-              <line x1="12" y1="2" x2="12" y2="6"></line>
-            </svg>
+            <BadgeJapaneseYen width={15} />
           </div>
         </div>
       </header>
@@ -120,20 +118,7 @@ export const Home = () => {
       </section>
 
       {/* Bottom Nav */}
-      <nav className="bottom-nav">
-        <button className="nav-item">
-          <div className="nav-icon-placeholder"></div>
-        </button>
-        <button className="nav-item active">
-          <div className="nav-icon-placeholder"></div>
-        </button>
-        <button className="nav-item">
-          <div className="nav-icon-placeholder"></div>
-        </button>
-        <button className="nav-item">
-          <div className="nav-icon-placeholder"></div>
-        </button>
-      </nav>
+      <BottomNav/>
     </div>
   );
 };

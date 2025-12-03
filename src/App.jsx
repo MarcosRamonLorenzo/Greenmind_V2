@@ -15,6 +15,8 @@ function App() {
         {sesionIniciada && estadoUsuario ? (
           <>
             <Route path="/" element={<Home />} />
+            <Route path="/categorias" element={<p>categories</p>} />
+            <Route path="/perfil" element={<p>profile</p>} />
           </>
         ) : (
           <>
