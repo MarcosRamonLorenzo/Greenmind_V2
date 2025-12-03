@@ -1,7 +1,8 @@
 import "./Home.css"; // El CSS está en la misma carpeta, así que se queda igual
 
 
-import streakImg from '../assets/racha.png';
+import mercado from "../assets/mercado.png";
+import reciclaje from "../assets/reciclaje.jpg"
 import bikeImg from '../assets/bici.jpg';
 import carpoolImg from '../assets/coche.jpg';
 import busImg from '../assets/bus.jpg';
@@ -33,11 +34,11 @@ export const Home = () => {
          <div className="stats-container">
           <div className="stat-chip">
             <span>5</span>
-            <Flame width={15} />
+            <Flame width={15} color="red" />
           </div>
           <div className="stat-chip">
             <span>500</span>
-            <BadgeJapaneseYen width={15} />
+            <BadgeJapaneseYen width={15} color="goldenrod" />
           </div>
         </div>
       </header>
@@ -96,30 +97,11 @@ export const Home = () => {
             </svg>
           </div>
         </div>
-        <div className="challenges-list">
-          <div className="challenge-card-small">
-            <div 
-              className="small-image" 
-              style={{ backgroundImage: `url(${carpoolImg})` }}
-            ></div>
-            <div className="small-card-content">
-              <h3>Comparte tu coche</h3>
-            </div>
-          </div>
-          <div className="challenge-card-small">
-            <div 
-              className="small-image"
-              style={{ backgroundImage: `url(${busImg})` }}
-            ></div>
-            <div className="small-card-content">
-              <h3>Usa el bus tres veces hoy</h3>
-            </div>
-          </div>
-        </div>
          <div className="challenges-list">
-         <HomeCard/>
-         <HomeCard/>
-         <HomeCard/>
+         <HomeCard img={carpoolImg} text={"Comparte tu coche"} type={1}/>
+          <HomeCard img={reciclaje} text={"Recicla 20 botellas de plastico"} type={2}/>
+         <HomeCard img={mercado} text={"Compra fruta en un mercado"} type={3}/>
+         <HomeCard img={busImg} text={"Usa el bus tres veces hoy"} type={1}/>
         </div>
       </section>
 
