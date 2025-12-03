@@ -5,6 +5,8 @@ import SignUp from "./pages/SignUp.jsx"
 import { Route, Routes } from "react-router-dom";
 import UserProvider from "./contexts/UserProvider.jsx";
 import useUser from "./hooks/useUser.jsx";
+import { Categories } from "./pages/Categories.jsx";
+import { Profile } from "./pages/Profile.jsx";
 
 function App() {
 
@@ -15,8 +17,8 @@ function App() {
         {sesionIniciada && estadoUsuario ? (
           <>
             <Route path="/" element={<Home />} />
-            <Route path="/categorias" element={<p>categories</p>} />
-            <Route path="/perfil" element={<p>profile</p>} />
+            <Route path="/categorias" element={<Categories/>} />
+            <Route path="/perfil" element={<Profile/>} />
           </>
         ) : (
           <>

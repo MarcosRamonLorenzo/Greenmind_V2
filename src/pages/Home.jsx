@@ -9,6 +9,7 @@ import profileImg from '../assets/squirtEl.jpg';
 import { BadgeJapaneseYen, Flame, House, Leaf, User } from 'lucide-react';
 import useUser from "../hooks/useUser";
 import { BottomNav } from "../components/BottomNav";
+import { HomeCard } from "../components/HomeCard";
 
 
 export const Home = () => {
@@ -114,6 +115,11 @@ export const Home = () => {
               <h3>Usa el bus tres veces hoy</h3>
             </div>
           </div>
+        </div>
+         <div className="challenges-list">
+         <HomeCard/>
+         <HomeCard/>
+         <HomeCard/>
         </div>
       </section>
 
