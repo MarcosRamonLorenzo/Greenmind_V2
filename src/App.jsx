@@ -1,23 +1,29 @@
+import  { Home }  from "./pages/Home";
 import "./App.css";
+import LogIn from "./pages/LogIn.jsx"
+import SignUp from "./pages/SignUp.jsx"
 import { Route, Routes } from "react-router-dom";
+import UserProvider from "./contexts/UserProvider.jsx";
+import useUser from "./hooks/useUser.jsx";
 
 function App() {
-  let isLogin = true;
 
+  const { sesionIniciada , estadoUsuario } = useUser();
   return (
     <>
       <Routes>
-        {isLogin ? (
+        {sesionIniciada && estadoUsuario ? (
           <>
-            <Route path="/" element={<div>Home</div>} />
+            <Route path="/" element={<Home />} />
           </>
         ) : (
           <>
-            <Route path="/log_in" element={<div>LogIn</div>} />
-            <Route path="/sign_in" element={<div>SignUp</div>} />
+            <Route path="/log_in" element={<LogIn/>} />
+            <Route path="/sign_in" element={<SignUp/>} />
           </>
         )}
       </Routes>
+    
     </>
   );
 }
