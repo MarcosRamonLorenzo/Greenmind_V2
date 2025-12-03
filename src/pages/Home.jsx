@@ -4,10 +4,10 @@ import "./Home.css"; // El CSS está en la misma carpeta, así que se queda igua
 // --- IMPORTANTE: RUTAS DE IMÁGENES ---
 // "../" nos lleva a la raíz del proyecto
 // Luego entramos en "src/assets/..."
-import streakImg from '../src/assets/racha.png';
-import bikeImg from '../src/assets/bici.jpg';
-import carpoolImg from '../src/assets/coche.jpg';
-import busImg from '../src/assets/bus.jpg';
+import streakImg from '../assets/racha.png';
+import bikeImg from '../assets/bici.jpg';
+import carpoolImg from '../assets/coche.jpg';
+import busImg from '../assets/bus.jpg';
 
 export const Home = () => {
   return (

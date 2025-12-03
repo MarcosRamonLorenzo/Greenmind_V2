@@ -1,10 +1,10 @@
-import  { Home }  from "../pages/Home";
+import  { Home }  from "./pages/Home";
 import "./App.css";
-import LogIn from "../pages/LogIn.jsx"
-import SignUp from "../pages/SignUp.jsx"
+import LogIn from "./pages/LogIn.jsx"
+import SignUp from "./pages/SignUp.jsx"
 import { Route, Routes } from "react-router-dom";
-import UserProvider from "../contexts/UserProvider.jsx";
-import useUser from "../hooks/useUser.jsx";
+import UserProvider from "./contexts/UserProvider.jsx";
+import useUser from "./hooks/useUser.jsx";
 
 function App() {
 
