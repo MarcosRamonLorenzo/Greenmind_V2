@@ -11,6 +11,8 @@ import { BadgeJapaneseYen, Flame, House, Leaf, User } from 'lucide-react';
 import useUser from "../hooks/useUser";
 import { BottomNav } from "../components/BottomNav";
 import { HomeCard } from "../components/HomeCard";
+import { ProgressBar } from "../components/ProgressBar";
+import { MoneyInfo } from "../components/MoneyInfo";
 
 
 export const Home = () => {
@@ -36,10 +38,7 @@ export const Home = () => {
             <span>5</span>
             <Flame width={15} color="red" />
           </div>
-          <div className="stat-chip">
-            <span>500</span>
-            <BadgeJapaneseYen width={15} color="goldenrod" />
-          </div>
+          <MoneyInfo number={500}/>
         </div>
       </header>
 
@@ -47,9 +46,7 @@ export const Home = () => {
       <section className="weekly-goal-card">
         <h3>¡A por los retos!</h3>
         <p>75% de tu objetivo semanal completado</p>
-        <div className="progress-bar-container">
-          <div className="progress-bar" style={{ width: '75%' }}></div>
-        </div>
+        <ProgressBar prc={45}/>
       </section>
 
       {/* Challenges Section */}
@@ -99,7 +96,7 @@ export const Home = () => {
         </div>
          <div className="challenges-list">
          <HomeCard img={carpoolImg} text={"Comparte tu coche"} type={1}/>
-          <HomeCard img={reciclaje} text={"Recicla 20 botellas de plastico"} type={2}/>
+         <HomeCard img={reciclaje} text={"Recicla 20 botellas de plastico"} type={2}/>
          <HomeCard img={mercado} text={"Compra fruta en un mercado"} type={3}/>
          <HomeCard img={busImg} text={"Usa el bus tres veces hoy"} type={1}/>
         </div>

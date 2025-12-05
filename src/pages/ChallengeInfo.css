@@ -1,0 +1,50 @@
+.challenge-info-container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 100px;
+    position: relative;
+    width: 100%;
+}
+
+.challenge-go-back{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.progress-container{
+    width: 100%;
+}
+
+.challenge-info{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    margin: 0 20px;
+
+}
+
+.reward-container{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.map-container{
+    height: 30vh;
+    width: 100%;
+    background-color: cornflowerblue;
+}
+
+.scan-button{
+    background-color: #8bc27a;
+    height: 10vh;
+    margin: 20px;
+    width: calc(100% - 40px);
+}

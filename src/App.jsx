@@ -7,6 +7,7 @@ import UserProvider from "./contexts/UserProvider.jsx";
 import useUser from "./hooks/useUser.jsx";
 import { Categories } from "./pages/Categories.jsx";
 import { Profile } from "./pages/Profile.jsx";
+import { ChallengeInfo } from "./pages/ChallengeInfo.jsx";
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/categorias" element={<Categories/>} />
             <Route path="/perfil" element={<Profile/>} />
+            <Route path={`/challenge/:id`} element={<ChallengeInfo/>} />
           </>
         ) : (
           <>
