@@ -3,6 +3,8 @@ import { MoneyInfo } from "../components/MoneyInfo";
 import { ProgressBar } from "../components/ProgressBar";
 import "./ChallengeInfo.css";
 import GoBack from "../components/GoBack";
+import { Map } from "../components/Map";
+
 
 export const ChallengeInfo = () => {
   const { id } = useParams();
@@ -26,8 +28,8 @@ export const ChallengeInfo = () => {
           <MoneyInfo number={20} />
         </div>
       </div>
-      <div className="map-container"></div>
-      <button className="scan-button">ScaN</button>
+      <div className="map-container"><Map/></div>
+      <button className="scan-button">Scan</button>
       <GoBack className={"challenge-go-back"} />
     </div>
   );
