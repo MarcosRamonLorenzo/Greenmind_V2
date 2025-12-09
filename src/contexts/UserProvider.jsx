@@ -110,7 +110,7 @@ const UserProvider = ({ children }) => {
       const { data, error } = await supabaseConexion.auth.signOut();
       if (error) throw error;
       setSesionIniciada(false);
-      redireccionar("/");
+      redireccionar("/log_in");
     } catch (error) {
       throw error.message;
     }

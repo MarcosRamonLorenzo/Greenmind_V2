@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    padding-top: 100px;
+    padding-top: 60px;
     position: relative;
     width: 100%;
 }
@@ -17,6 +17,14 @@
 
 .progress-container{
     width: 100%;
+}
+
+.challenge-info h1{
+    font-size: 30px;
+}
+
+.challenge-info-text{
+    font-size: 12px;
 }
 
 .challenge-info{
@@ -33,7 +41,9 @@
 .reward-container{
     display: flex;
     align-items: center;
-    gap: 20px;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 10px;
 }
 
 .map-container{
@@ -42,7 +52,12 @@
 }
 
 .scan-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
     background-color: #8bc27a;
+    color: #eee;
     height: 10vh;
     margin: 20px;
     width: calc(100% - 40px);

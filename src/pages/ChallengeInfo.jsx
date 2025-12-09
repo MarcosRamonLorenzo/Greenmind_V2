@@ -4,32 +4,34 @@ import { ProgressBar } from "../components/ProgressBar";
 import "./ChallengeInfo.css";
 import GoBack from "../components/GoBack";
 import { Map } from "../components/Map";
+import { BadgeJapaneseYen, Scan } from "lucide-react";
+import { challenges } from "../data/data";
+
 
 
 export const ChallengeInfo = () => {
   const { id } = useParams();
 
+const challenge = challenges.find(c => c.id === Number(id));
+
   return (
     <div className="challenge-info-container">
       <div className="challenge-info">
-        <h1>Reto 1</h1>
-        <div className="progress-container">
-          <p>{35}% del reto completado</p>
-          <ProgressBar prc={35} />
-        </div>
+        <h1>{challenge.titulo}</h1>
         <p className="challenge-info-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
-          repellat eos libero? Animi repellat fugit non cupiditate nostrum nobis
-          ad reiciendis veniam pariatur vitae, aspernatur atque velit hic ex
-          vero!
+         {challenge.descripcion}
         </p>
+        <div className="progress-container">
+          <p>{challenge.completado}% del reto completado</p>
+          <ProgressBar prc={challenge.completado} />
+        </div>
         <div className="reward-container">
-          <p>Reward</p>
-          <MoneyInfo number={20} />
+          <span>{challenge.precio}</span>
+          <BadgeJapaneseYen width={23} color="goldenrod" />
         </div>
       </div>
       <div className="map-container"><Map /></div>
-      <button className="scan-button">Scan</button>
+      <button className="scan-button"><Scan/> Scan</button>
       <GoBack className={"challenge-go-back"} />
     </div>
   );
