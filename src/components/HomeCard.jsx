@@ -1,10 +1,14 @@
 import { BiCycling } from "react-icons/bi";
 import "./HomeCard.css";
 import { Recycle, ShoppingBasket } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
-export const HomeCard = ({ text, subText, img, type = 1 }) => {
+export const HomeCard = ({ text, subText, img, type = 1, navigateTo = '/' }) => {
+
+  const navigate = useNavigate();
+
   return (
-    <div className="challenge-card-small">
+    <div style={{ cursor: "pointer" }} className="challenge-card-small" onClick={() => { navigate(navigateTo) }} >
       <div
         className="small-image"
         style={{ backgroundImage: `url(${img})` }}

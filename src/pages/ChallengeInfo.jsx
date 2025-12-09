@@ -14,7 +14,7 @@ export const ChallengeInfo = () => {
       <div className="challenge-info">
         <h1>Reto 1</h1>
         <div className="progress-container">
-           <p>{35}% del reto completado</p> 
+          <p>{35}% del reto completado</p>
           <ProgressBar prc={35} />
         </div>
         <p className="challenge-info-text">
@@ -28,7 +28,7 @@ export const ChallengeInfo = () => {
           <MoneyInfo number={20} />
         </div>
       </div>
-      <div className="map-container"><Map/></div>
+      <div className="map-container"><Map /></div>
       <button className="scan-button">Scan</button>
       <GoBack className={"challenge-go-back"} />
     </div>

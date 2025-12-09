@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=TASA+Orbiter:wght@400..800&display=swap');
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'TASA Orbiter', Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
 
   font-synthesis: none;
@@ -17,7 +18,6 @@ a:hover {
   color: lightslategray;
   color: #535bf2;
 }
-
 
 h1 {
   font-size: 3.2em;
