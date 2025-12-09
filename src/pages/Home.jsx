@@ -27,7 +27,7 @@ export const Home = () => {
       <header className="home-header">
         <div className="user-profile">
           <div className="avatar-placeholder">
-            <img src={profileImg} alt="" />
+            <img src={profileImg} alt="" onClick={()=>{navigate('/perfil');}} style={{cursor:"pointer"}} />
           </div>
           <div className="greeting">
             <h1>Bienvenido</h1>
@@ -97,10 +97,10 @@ export const Home = () => {
           </div>
         </div>
         <div className="challenges-list">
-          <HomeCard img={carpoolImg} text={"Comparte tu coche"} type={1} navigateTo={'challenge/1'} />
-          <HomeCard img={reciclaje} text={"Recicla 20 botellas de plástico"} type={2} navigateTo={'challenge/1'} />
-          <HomeCard img={mercado} text={"Compra fruta en un mercado"} type={3} navigateTo={'challenge/1'} />
-          <HomeCard img={busImg} text={"Usa el bus tres veces hoy"} type={1} navigateTo={'challenge/1'} />
+          <HomeCard img={carpoolImg} text={"Comparte tu coche"} type={1} navigateTo={'challenge/2'} />
+          <HomeCard img={reciclaje} text={"Recicla 20 botellas de plástico"} type={2} navigateTo={'challenge/3'} />
+          <HomeCard img={mercado} text={"Compra fruta en un mercado"} type={3} navigateTo={'challenge/4'} />
+          <HomeCard img={busImg} text={"Usa el bus tres veces hoy"} type={1} navigateTo={'challenge/5'} />
         </div>
       </section>
 
