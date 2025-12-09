@@ -1,0 +1,64 @@
+.category-container {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  padding: 20px;
+  background-color: #d31212; /* Un gris muy claro de fondo */
+  font-family: sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.instruction-text {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.cards-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card {
+  background-color: #e0e0e0; /* Color gris de los recuadros del wireframe */
+  border-radius: 12px;
+  height: 120px; /* Altura aproximada */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+  transform: scale(1.02);
+  background-color: #d6d6d6;
+}
+
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 20px;
+}
+
+.nav-item {
+  width: 40px;
+  height: 40px;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+}

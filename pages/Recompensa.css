@@ -1,0 +1,25 @@
+.points-badge {
+    background-color: #eee;
+    padding: 8px 15px;
+    border-radius: 20px;
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.filter-dropdown {
+    padding: 8px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #41c518;
+    width: 150px;
+}
+.reward-card {
+    background: #41c518; /* Color de fondo grisaceo de las tarjetas */
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.reward-details { flex: 1; margin-right: 15px; }
