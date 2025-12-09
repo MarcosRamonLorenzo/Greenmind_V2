@@ -1,8 +1,8 @@
 import { createClient } from "@supabase/supabase-js";
 
 const supabaseConexion = createClient(
-  import.meta.env.VITE_SUPEBASE_URL,
-  import.meta.env.VITE_SUPEBASE_KEY
+  import.meta.env.VITE_SUPABASE_URL,
+  import.meta.env.VITE_SUPABASE_KEY
 ); 
 
 
