@@ -4,7 +4,7 @@ import useUser from "../hooks/useUser";
 
 const SignUp = () => {
 
-  const { actualizarDatoRegistro , registrarUsuario } = useUser();
+  const { actualizarDatoRegistro, registrarUsuario } = useUser();
 
 
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ const SignUp = () => {
     <div className="signup-container">
       <div className="signup-img">
         <img
-          src="src/assets/regist-img.svg"
+          src="https://aicfonsrrwpikljcmsym.supabase.co/storage/v1/object/sign/imgs/regist-img.svg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jMTI2NDM5OS01YTBmLTRjZTItYjIwOC0yM2QwNjhlMWVlYTEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWdzL3JlZ2lzdC1pbWcuc3ZnIiwiaWF0IjoxNzY1MzY4ODI2LCJleHAiOjE3OTY5MDQ4MjZ9._C4sULAPgfOK50Nv0j2TLoQRePu9JigckI51_6XO-KE"
           alt=""
         />
       </div>
@@ -25,12 +25,12 @@ const SignUp = () => {
         </div>
 
         <div className="form">
-          <input type="text" className="input" placeholder="Full name" name="name" onChange={(e)=>{actualizarDatoRegistro(e)}} />
-          <input type="email" className="input" placeholder="Email" name="email" onChange={(e)=>{actualizarDatoRegistro(e)}} />
-          <input type="password" className="input" placeholder="Password" name="password" onChange={(e)=>{actualizarDatoRegistro(e)}} />
-          <input type="password" className="input" placeholder="Repeat password"   />
+          <input type="text" className="input" placeholder="Full name" name="name" onChange={(e) => { actualizarDatoRegistro(e) }} />
+          <input type="email" className="input" placeholder="Email" name="email" onChange={(e) => { actualizarDatoRegistro(e) }} />
+          <input type="password" className="input" placeholder="Password" name="password" onChange={(e) => { actualizarDatoRegistro(e) }} />
+          <input type="password" className="input" placeholder="Repeat password" />
 
-          <button className="form-btn" onClick={()=>{registrarUsuario();}}>Sign up</button>
+          <button className="form-btn" onClick={() => { registrarUsuario(); }}>Sign up</button>
 
           <p className="sign-up-label">
             Already have an account?
