@@ -1,0 +1,69 @@
+/* CONTENEDOR GENERAL */
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background: white;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #efefef;
+}
+
+.header-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header .title {
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+/* SCROLL CONTAINER */
+.scroll-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 30px 0;
+}
+
+/* LISTA DE RETOS */
+.retos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  align-items: center;
+}
+
+/* ESTILOS DE RETO */
+
+/* Permite animaciones y centrado */
+.reto-item {
+  position: relative;
+  transition: transform 0.15s ease;
+}
+
+/* CENTRADO DEL SVG DEL ARO */
+.reto-item svg {
+  pointer-events: none;
+}
+
+/* Tamaño del ícono */
+.reto-item svg,
+.reto-item div {
+  user-select: none;
+}
+
+/* Mejora táctil en móviles */
+.retos-list > *:active {
+  transform: scale(0.97);
+}
