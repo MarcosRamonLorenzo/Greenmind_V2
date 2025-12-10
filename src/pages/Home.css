@@ -269,3 +269,19 @@
 .challenges-list::-webkit-scrollbar {
   display: none;
 }
+
+@media (min-width: 720px) {
+  .home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+
+  .home-container > div {
+    width: 100%;
+  }
+}
