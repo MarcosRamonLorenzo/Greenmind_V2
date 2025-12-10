@@ -24,10 +24,10 @@ export const Home = () => {
   return (
     <div className="home-container">
       {/* Header Section */}
-      <header className="home-header">
+      <div className="home-header">
         <div className="user-profile">
           <div className="avatar-placeholder">
-            <img src={profileImg} alt="" onClick={()=>{navigate('/perfil');}} style={{cursor:"pointer"}} />
+            <img src={profileImg} alt="" onClick={() => { navigate('/perfil'); }} style={{ cursor: "pointer" }} />
           </div>
           <div className="greeting">
             <h1>Bienvenido</h1>
@@ -42,17 +42,17 @@ export const Home = () => {
           </div>
           <MoneyInfo number={500} />
         </div>
-      </header>
+      </div>
 
       {/* Weekly Goal Card */}
-      <section className="weekly-goal-card">
+      <div className="weekly-goal-card">
         <h3>¡A por los retos!</h3>
         <p>75% de tu objetivo semanal completado</p>
         <ProgressBar prc={45} />
-      </section>
+      </div>
 
       {/* Challenges Section */}
-      <section className="challenges-section">
+      <div className="challenges-section">
         <div className="section-header">
           <h2>Retos</h2>
         </div>
@@ -61,10 +61,10 @@ export const Home = () => {
           <div className="chip">Plástico</div>
           <div className="chip">Reciclaje</div>
         </div>
-      </section>
+      </div>
 
       {/* Today Section */}
-      <section className="today-section">
+      <div className="today-section">
         <div className="section-header">
           <h2>Hoy</h2>
         </div>
@@ -84,10 +84,10 @@ export const Home = () => {
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Last Challenges Section */}
-      <section className="last-challenges-section">
+      <div className="last-challenges-section">
         <div className="section-header">
           <h2>Últimos retos</h2>
           <div className="chevron-left" style={{ cursor: "pointer" }}>
@@ -102,7 +102,7 @@ export const Home = () => {
           <HomeCard img={mercado} text={"Compra fruta en un mercado"} type={3} navigateTo={'challenge/4'} />
           <HomeCard img={busImg} text={"Usa el bus tres veces hoy"} type={1} navigateTo={'challenge/5'} />
         </div>
-      </section>
+      </div>
 
       {/* Bottom Nav */}
       <BottomNav />
