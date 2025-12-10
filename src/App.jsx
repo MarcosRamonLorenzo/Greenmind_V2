@@ -9,6 +9,7 @@ import { Categories } from "./pages/Categories.jsx";
 import { Profile } from "./pages/Profile.jsx";
 import { ChallengeInfo } from "./pages/ChallengeInfo.jsx";
 import { Scan } from "./pages/Scan.jsx";
+import CategoryPage from "./pages/CategoryPage.jsx";
 
 function App() {
 
@@ -24,6 +25,8 @@ function App() {
             <Route path="/perfil" element={<Profile />} />
             <Route path={`/challenge/:id`} element={<ChallengeInfo />} />
             <Route path={`/scan`} element={<Scan />} />
+            <Route path={`/categorias/:id`} element={<CategoryPage />} />
+            
 
           </>
         ) : (
