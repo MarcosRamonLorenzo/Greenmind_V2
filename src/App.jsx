@@ -2,7 +2,7 @@ import { Home } from "./pages/Home";
 import "./App.css";
 import LogIn from "./pages/LogIn.jsx"
 import SignUp from "./pages/SignUp.jsx"
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import UserProvider from "./contexts/UserProvider.jsx";
 import useUser from "./hooks/useUser.jsx";
 import { Categories } from "./pages/Categories.jsx";
@@ -19,6 +19,7 @@ function App() {
         {sesionIniciada && estadoUsuario ? (
           <>
             <Route path="/" element={<Home />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
             <Route path="/categorias" element={<Categories />} />
             <Route path="/perfil" element={<Profile />} />
             <Route path={`/challenge/:id`} element={<ChallengeInfo />} />
@@ -29,6 +30,8 @@ function App() {
           <>
             <Route path="/log_in" element={<LogIn />} />
             <Route path="/sign_in" element={<SignUp />} />
+            <Route path="*" element={<Navigate to="/log_in" replace />} />
+
           </>
         )}
       </Routes>
