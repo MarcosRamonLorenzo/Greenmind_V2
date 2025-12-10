@@ -1,4 +1,4 @@
-import  { Home }  from "./pages/Home";
+import { Home } from "./pages/Home";
 import "./App.css";
 import LogIn from "./pages/LogIn.jsx"
 import SignUp from "./pages/SignUp.jsx"
@@ -8,28 +8,31 @@ import useUser from "./hooks/useUser.jsx";
 import { Categories } from "./pages/Categories.jsx";
 import { Profile } from "./pages/Profile.jsx";
 import { ChallengeInfo } from "./pages/ChallengeInfo.jsx";
+import { Scan } from "./pages/Scan.jsx";
 
 function App() {
 
-  const { sesionIniciada , estadoUsuario } = useUser();
+  const { sesionIniciada, estadoUsuario } = useUser();
   return (
     <>
       <Routes>
         {sesionIniciada && estadoUsuario ? (
           <>
             <Route path="/" element={<Home />} />
-            <Route path="/categorias" element={<Categories/>} />
-            <Route path="/perfil" element={<Profile/>} />
-            <Route path={`/challenge/:id`} element={<ChallengeInfo/>} />
+            <Route path="/categorias" element={<Categories />} />
+            <Route path="/perfil" element={<Profile />} />
+            <Route path={`/challenge/:id`} element={<ChallengeInfo />} />
+            <Route path={`/scan`} element={<Scan />} />
+
           </>
         ) : (
           <>
-            <Route path="/log_in" element={<LogIn/>} />
-            <Route path="/sign_in" element={<SignUp/>} />
+            <Route path="/log_in" element={<LogIn />} />
+            <Route path="/sign_in" element={<SignUp />} />
           </>
         )}
       </Routes>
-    
+
     </>
   );
 }
