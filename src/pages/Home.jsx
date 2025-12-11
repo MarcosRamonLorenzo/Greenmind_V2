@@ -47,7 +47,7 @@ export const Home = () => {
       {/* Weekly Goal Card */}
       <div className="weekly-goal-card">
         <h3>¡A por los retos!</h3>
-        <p>75% de tu objetivo semanal completado</p>
+        <p>45% de tu objetivo semanal completado</p>
         <ProgressBar prc={45} />
       </div>
 
