@@ -3,7 +3,7 @@ import { Recycle, Truck, ShoppingCart, Lock } from "lucide-react"; // Ajusté lo
 import { motion } from "framer-motion";
 import "./CategoryPage.css";
 import GoBack from "../components/GoBack.jsx";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 // Íconos por categoría
 const categoryIcons = {
@@ -20,7 +20,7 @@ const categoryNames = {
 };
 
 // COMPONENTE DE RETO (Activo / Bloqueado)
-function RetoItem({ status = "locked", onClick, categoria = "reciclar" }) {
+function RetoItem({ status = "locked", onClick, categoria = "reciclar", id }) {
   const isLocked = status === "locked";
   const isUnlocked = status === "unlocked";
 
@@ -48,11 +48,11 @@ function RetoItem({ status = "locked", onClick, categoria = "reciclar" }) {
           width: 85,
           height: 85,
           borderRadius: "50%",
-          background: isLocked ? "#e5e5e5" : "#32cd32",
+          background: isLocked ? "#e5e5e5" : "#8bc27a",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          boxShadow: isLocked ? "none" : "0px 4px 0px #2aa52a",
+          boxShadow: isLocked ? "none" : "0px 4px 0px #7ab26a",
         }}
       >
         {isLocked ? <Lock size={32} color="#777" /> : <Icon size={32} color="white" fill="white" />}
@@ -68,11 +68,11 @@ function RetoItem({ status = "locked", onClick, categoria = "reciclar" }) {
             borderRadius: 12,
             fontSize: 14,
             fontWeight: "bold",
-            color: "#35c235",
+            color: "#8bc27a",
             border: "2px solid #e5e5e5",
           }}
         >
-          START
+          Iniciar Reto {id}
         </div>
       )}
 
@@ -100,6 +100,9 @@ function RetoItem({ status = "locked", onClick, categoria = "reciclar" }) {
 
 // PÁGINA COMPLETA
 export default function CategoryPage() {
+
+  const navigate = useNavigate();
+
   const { id } = useParams(); // id de la URL
   const categoria = categoryNames[id] || "reciclar"; // asigna el nombre de la categoría
   const Icon = categoryIcons[categoria] || Recycle;
@@ -108,6 +111,13 @@ export default function CategoryPage() {
     { id: 1, status: "unlocked" },
     { id: 2, status: "locked" },
     { id: 3, status: "locked" },
+    { id: 4, status: "locked" },
+    { id: 5, status: "locked" },
+    { id: 6, status: "locked" },
+    { id: 7, status: "locked" },
+
+
+
   ]);
 
   // Lógica de click en retos
@@ -120,8 +130,8 @@ export default function CategoryPage() {
         r.id === id
           ? { ...r, status: "completed" }
           : r.id === id + 1
-          ? { ...r, status: "unlocked" }
-          : r
+            ? { ...r, status: "unlocked" }
+            : r
       )
     );
   };
@@ -138,17 +148,19 @@ export default function CategoryPage() {
       </div>
 
       <div className="scroll-container">
-        <div className="retos-list" style={{ display: "flex", gap: 30 }}>
+        <div className="retos-list" style={{ display: "flex", gap: 10 }}>
           {retos.map((r) => (
             <RetoItem
               key={r.id}
               status={r.status}
               onClick={() => handleRetoClick(r.id)}
               categoria={categoria}
+              id={r.id}
             />
           ))}
         </div>
       </div>
+      <button className="button-recompensas" onClick={() => { navigate('/recompensas') }}>Recompensas</button>
     </div>
   );
 }
