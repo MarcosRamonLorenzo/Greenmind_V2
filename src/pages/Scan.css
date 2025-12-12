@@ -42,7 +42,7 @@
 
 .scan-btn {
   width: 85%;
-  background: #8bc27a;
+  background: var(--primary);
   border: none;
   padding: 16px;
   border-radius: 16px;

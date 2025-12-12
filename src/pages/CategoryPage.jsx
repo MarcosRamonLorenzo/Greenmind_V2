@@ -48,7 +48,7 @@ function RetoItem({ status = "locked", onClick, categoria = "reciclar", id }) {
           width: 85,
           height: 85,
           borderRadius: "50%",
-          background: isLocked ? "#e5e5e5" : "#8bc27a",
+          background: isLocked ? "#e5e5e5" : "var(--primary)",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -68,7 +68,7 @@ function RetoItem({ status = "locked", onClick, categoria = "reciclar", id }) {
             borderRadius: 12,
             fontSize: 14,
             fontWeight: "bold",
-            color: "#8bc27a",
+            color: "var(--primary)",
             border: "2px solid #e5e5e5",
           }}
         >
