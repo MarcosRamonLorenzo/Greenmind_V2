@@ -28,7 +28,6 @@ const SignUp = () => {
           <input type="text" className="input" placeholder="Full name" name="name" onChange={(e) => { actualizarDatoRegistro(e) }} />
           <input type="email" className="input" placeholder="Email" name="email" onChange={(e) => { actualizarDatoRegistro(e) }} />
           <input type="password" className="input" placeholder="Password" name="password" onChange={(e) => { actualizarDatoRegistro(e) }} />
-          <input type="password" className="input" placeholder="Repeat password" />
 
           <button className="form-btn" onClick={() => { registrarUsuario(); }}>Sign up</button>
 

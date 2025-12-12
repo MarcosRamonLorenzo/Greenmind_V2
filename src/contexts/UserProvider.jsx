@@ -70,6 +70,7 @@ const UserProvider = ({ children }) => {
         //Vaciar formulario.
         setEstadoRegistro(estadoInicialFormularioSignUp);
       } catch (error) {
+        alert("Algo a fallado. Lo siento. Error: "+error.message);
         setErroresRegistro([error.message]);
       }
     }
@@ -95,10 +96,12 @@ const UserProvider = ({ children }) => {
       } catch (error) {
         //Si da este error avismos al usuario que la contraseña esta mal puesta o que no existe una cuneta con esos datos de sesión.
         if (error.message === "Invalid login credentials") {
+          alert("No existe la cuenta ,prueba con otra contraseña o crea una nueva cuenta.");
           setErroresInicioSesion([
             "No existe la cuenta ,prueba con otra contraseña o crea una nueva cuenta.",
           ]);
         } else {
+          alert("Algo a fallado. Lo siento");
           setErroresInicioSesion([error.message]);
         }
       }

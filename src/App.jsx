@@ -10,6 +10,7 @@ import { Profile } from "./pages/Profile.jsx";
 import { ChallengeInfo } from "./pages/ChallengeInfo.jsx";
 import { Scan } from "./pages/Scan.jsx";
 import CategoryPage from "./pages/CategoryPage.jsx";
+import Recompensas from "./pages/Recompensas.jsx";
 
 function App() {
 
@@ -26,7 +27,8 @@ function App() {
             <Route path={`/challenge/:id`} element={<ChallengeInfo />} />
             <Route path={`/scan`} element={<Scan />} />
             <Route path={`/categorias/:id`} element={<CategoryPage />} />
-            
+            <Route path={`/recompensas`} element={<Recompensas />} />
+
 
           </>
         ) : (

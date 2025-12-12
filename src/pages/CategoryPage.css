@@ -1,8 +1,9 @@
 /* CONTENEDOR GENERAL */
 .page {
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   background: white;
 }
@@ -66,4 +67,22 @@
 /* Mejora táctil en móviles */
 .retos-list > *:active {
   transform: scale(0.97);
+}
+
+.button-recompensas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background-color: #8bc27a;
+  color: #eee;
+  height: 10vh;
+  margin: 20px;
+  width: calc(100% - 40px);
+}
+
+.category-page-goback{
+  position: absolute;
+  top: 20px;
+  left: 20px;
 }
