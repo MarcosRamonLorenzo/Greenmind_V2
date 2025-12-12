@@ -1,8 +1,9 @@
 /* CONTENEDOR GENERAL */
 .page {
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   background: white;
 }
@@ -78,4 +79,10 @@
   height: 10vh;
   margin: 20px;
   width: calc(100% - 40px);
+}
+
+.category-page-goback{
+  position: absolute;
+  top: 20px;
+  left: 20px;
 }
