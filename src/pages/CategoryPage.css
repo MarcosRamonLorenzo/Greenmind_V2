@@ -74,7 +74,7 @@
   align-items: center;
   justify-content: center;
   gap: 5px;
-  background-color: #8bc27a;
+  background-color: var(--primary);
   color: #eee;
   height: 10vh;
   margin: 20px;

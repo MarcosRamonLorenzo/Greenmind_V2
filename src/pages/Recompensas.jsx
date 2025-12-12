@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { ChevronDown, BadgeJapaneseYen } from "lucide-react";
 import GoBack from "../components/GoBack";
 import { ProgressBar } from "../components/ProgressBar";
+import ConfettiModal from "../components/ConfettiModal";
 import "./Recompensas.css"
 
 export default function Recompensas() {
@@ -13,7 +14,9 @@ export default function Recompensas() {
   };
 
     const [numeros, setNumeros] = useState(generarNumeros);
-    const money=500;
+    const [showModal, setShowModal] = useState(false);
+    const [claimedReward, setClaimedReward] = useState("");
+    const [money, setMoney] = useState(900);
     const items = [1, 2, 3, 4];
     const recompensas = ["Bono de 1 mes de transporte público gratis."," 20 € es Steam.","3 meses gratis de Spotify premium.","Descuentos de navidad en mercados locales."]
 
@@ -22,6 +25,14 @@ export default function Recompensas() {
 
     setNumeros(generarNumeros());
   }, []); 
+
+    const handleClaimReward = (rewardName, cost) => {
+        if (money >= cost) {
+            setClaimedReward(rewardName);
+            setShowModal(true);
+            setMoney(money-cost);
+        }
+    };
 
     return (
         <div className="rewards">
@@ -51,10 +62,23 @@ export default function Recompensas() {
                             </div>
                         </div>
 
-                        <ProgressBar prc={(numeros[i]-money)*0.1} className="reward-card__progress" />
+                        <ProgressBar prc={Math.min(100, (money / numeros[i]) * 100)} className="reward-card__progress" />
+                        <button 
+                            className="reward-card__button"
+                            onClick={() => handleClaimReward(recompensas[i], numeros[i])}
+                            disabled={money < numeros[i]}
+                        >
+                            Canjear
+                        </button>
                     </div>
                 ))}
             </div>
+
+            <ConfettiModal 
+                isOpen={showModal} 
+                onClose={() => setShowModal(false)}
+                rewardName={claimedReward}
+            />
         </div>
     );
 }

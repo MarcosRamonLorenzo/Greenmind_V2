@@ -1,18 +1,3 @@
-/* =========================================
-   VARIABLES & RESET
-   ========================================= */
-:root {
-  --primary: #8bc27a;
-  --primary-dark: #7ab26a;
-  --secondary: #ebc48a;
-  --no-selection: #adacaa;
-  --text-dark: #1a1a1a;
-  --bg-body: #fafff9;
-  --white: #ffffff;
-  --shadow-soft: 0 10px 30px -10px rgba(139, 194, 122, 0.3);
-  --grey-bar: #555555;
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
