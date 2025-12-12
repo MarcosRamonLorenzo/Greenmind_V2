@@ -84,3 +84,12 @@
 .reward-card__progress {
   width: 100%;
 }
+
+.reward-card__button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+}

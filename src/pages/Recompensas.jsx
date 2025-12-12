@@ -51,7 +51,8 @@ export default function Recompensas() {
                             </div>
                         </div>
 
-                        <ProgressBar prc={(numeros[i]-money)*0.1} className="reward-card__progress" />
+                        <ProgressBar prc={Math.min(100, (money / numeros[i]) * 100)} className="reward-card__progress" />
+                        <button className="reward-card__button">Canjear</button>
                     </div>
                 ))}
             </div>
