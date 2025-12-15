@@ -93,3 +93,12 @@
   border-radius: 0.75rem;
   cursor: pointer;
 }
+
+@media (min-width: 720px) {
+
+
+  .rewards {
+  padding: 20px 30%;
+}
+
+}
